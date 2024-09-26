@@ -1,0 +1,104 @@
+package Agencia;
+
+import java.util.ArrayList;
+
+public class Vuelo {
+	private int numero;
+	private Ciudad salida;
+	private Ciudad llegada;
+	private int horaSalida;
+	private int duracion;
+	private Piloto piloto;
+	
+	private ArrayList<Silla>listaPasajeros;
+	private int nSillas;
+	public Vuelo(int numero, Ciudad salida, Ciudad llegada, int horaSalida, int duracion, Piloto piloto,
+			ArrayList<Silla> listaPasajeros, int nSillas) {
+		super();
+		this.numero = numero;
+		this.salida = salida;
+		this.llegada = llegada;
+		this.horaSalida = horaSalida;
+		this.duracion = duracion;
+		this.piloto = piloto;
+		this.nSillas = nSillas;
+		this.listaPasajeros = new ArrayList<Silla>();
+		
+	}
+	public int getNumero() {
+		return numero;
+	}
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	public Ciudad getSalida() {
+		return salida;
+	}
+	public void setSalida(Ciudad salida) {
+		this.salida = salida;
+	}
+	public Ciudad getLlegada() {
+		return llegada;
+	}
+	public void setLlegada(Ciudad llegada) {
+		this.llegada = llegada;
+	}
+	public int getHoraSalida() {
+		return horaSalida;
+	}
+	public void setHoraSalida(int horaSalida) {
+		this.horaSalida = horaSalida;
+	}
+	public int getDuracion() {
+		return duracion;
+	}
+	public void setDuracion(int duracion) {
+		this.duracion = duracion;
+	}
+	public Piloto getPiloto() {
+		return piloto;
+	}
+	public void setPiloto(Piloto piloto) {
+		this.piloto = piloto;
+	}
+	public ArrayList<Silla> getListaPasajeros() {
+		return listaPasajeros;
+	}
+	public void setListaPasajeros(ArrayList<Silla> listaPasajeros) {
+		this.listaPasajeros = listaPasajeros;
+	}
+	public int getnSillas() {
+		return nSillas;
+	}
+	public void setnSillas(int nSillas) {
+		this.nSillas = nSillas;
+	}
+	@Override
+	public String toString() {
+		return "Vuelo [numero=" + numero + ", salida=" + salida + ", llegada=" + llegada + ", horaSalida=" + horaSalida
+				+ ", duracion=" + duracion + ", piloto=" + piloto + ", listaPasajeros=" + listaPasajeros + ", nSillas="
+				+ nSillas + "]";
+	}
+	public void agregarSilla(Silla silla) {
+		if(listaPasajeros.size()<nSillas)
+			listaPasajeros.add(silla);
+		else
+			System.out.println("Paila no hay puesto ");
+	}
+		
+	public void listaPasajeros( ) {
+		System.out.println("#Vuelo "+this.numero);
+		System.out.println("Ciudad Salida"+ this.salida + "Ciudad LLegada "+this.llegada);
+		System.out.println("Hora Salida" + this.horaSalida);
+		
+		for(Silla silla: listaPasajeros) {
+			System.out.println(silla);
+			
+		}
+		
+		
+	}
+	
+	
+
+}
