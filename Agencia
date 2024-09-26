@@ -1,0 +1,23 @@
+package Agencia;
+
+	import java.util.ArrayList;
+public class agencia {
+
+		public static ArrayList<Vuelo> listaVuelo = new ArrayList<>();
+	public static void main(String[] args) {
+		
+		Ciudad salida= new Ciudad(1000,"Bogota");
+		Ciudad llegada = new Ciudad(2000,"Barranquilla");
+		Piloto piloto = new Piloto("Pachito",5000);
+		
+		Vuelo vuelo1020 = new Vuelo(1020,salida,llegada,10,1,10,piloto);
+		Pasajero pasajero1 = new Pasajero(12345,"Juanita",20,"mujer");
+		Silla silla1=new Silla('A',1,pasajero1);
+		
+		vuelo1020.agregarSilla(silla1);
+		vuelo1020.listaPasajeros();
+		
+
+	}
+
+}
